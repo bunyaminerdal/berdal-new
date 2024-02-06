@@ -11,7 +11,7 @@ const projectList = [
       "Next.js(14) Typescript Tailwind.css Shadcn/ui react-icons Prisma Neon.Tech Postgres nextauth resend(mail service) react-hook-form zod sonner",
     img: berdalNewImg,
     githubUrl: "https://github.com/bunyaminerdal/berdal-new",
-    visitUrl: "https://www.bunyaminerdal.com",
+    visitUrl: "https://www.bunyaminerdal.dev",
   },
   {
     title: "PERSONAL WEBSITE (OLD)",
@@ -19,7 +19,7 @@ const projectList = [
       "Next.js(13) Typescript material-ui material-icons Prisma Supabase Postgres nextauth nodemailer notistack react-hook-form Axios",
     img: berdalImg,
     githubUrl: "https://github.com/bunyaminerdal/berdal",
-    visitUrl: "https://www.bunyaminerdal.com",
+    visitUrl: "https://old.bunyaminerdal.dev",
   },
   {
     title: "REALTIME CHAT APP",
@@ -27,7 +27,7 @@ const projectList = [
       "Next.js Typescript Tailwind.css daisyUi Prisma Postgres Supabase(db and realtime websocket) react-icons Axios",
     img: berdalChatImg,
     githubUrl: "https://github.com/bunyaminerdal/berdal-chat",
-    visitUrl: "https://chat.bunyaminerdal.com",
+    visitUrl: "https://chat.bunyaminerdal.dev",
   },
   {
     title: "TODO APP",
@@ -35,7 +35,7 @@ const projectList = [
       "Next.js Typescript Tailwind.css Prisma Supabase Postgres react-icons Axios react-hook-form",
     img: berdalTodoImg,
     githubUrl: "https://github.com/bunyaminerdal/berdal-todo-app",
-    visitUrl: "https://todo.bunyaminerdal.com",
+    visitUrl: "https://todo.bunyaminerdal.dev",
   },
 ];
 
