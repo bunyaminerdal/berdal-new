@@ -7,35 +7,36 @@ import { useSearchParams } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { DEFAULT_LOGIN_REDIRECT } from "@/routes";
+import { useTransition } from "react";
+import { start } from "repl";
 
-export const Social = () => {
+export const Social = ({ provider }: { provider: "google" | "github" }) => {
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl");
+  const [isPending, startTransition] = useTransition();
 
-  const onClick = (provider: "google" | "github") => {
-    signIn(provider, {
-      callbackUrl: callbackUrl || DEFAULT_LOGIN_REDIRECT,
+  const onClick = () => {
+    startTransition(async () => {
+      await signIn(provider, {
+        callbackUrl: callbackUrl || DEFAULT_LOGIN_REDIRECT,
+      });
     });
-  }
+  };
 
   return (
-    <div className="flex items-center w-full gap-x-2">
-      <Button
-        size="lg"
-        className="w-full"
-        variant="outline"
-        onClick={() => onClick("google")}
-      >
+    <Button
+      size="lg"
+      className="w-full"
+      variant="outline"
+      onClick={() => onClick()}
+      disabled={isPending}
+      loading={isPending}
+    >
+      {provider === "google" ? (
         <FcGoogle className="h-5 w-5" />
-      </Button>
-      <Button
-        size="lg"
-        className="w-full"
-        variant="outline"
-        onClick={() => onClick("github")}
-      >
+      ) : (
         <FaGithub className="h-5 w-5" />
-      </Button>
-    </div>
+      )}
+    </Button>
   );
 };
