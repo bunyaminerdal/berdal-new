@@ -35,8 +35,16 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
           <div className="flex flex-col gap-2 ">
             <div className="border-b w-full " />
             <div className="flex gap-2  mx-5 text-primary">
-              <LinkButton label={"GitHub"} href={project.githubUrl} />
-              <LinkButton label={"Visit"} href={project.visitUrl} />
+              <LinkButton
+                label={"GitHub"}
+                href={project.githubUrl}
+                target="_blank"
+              />
+              <LinkButton
+                label={"Visit"}
+                href={project.visitUrl}
+                target="_blank"
+              />
             </div>
           </div>
         </div>
