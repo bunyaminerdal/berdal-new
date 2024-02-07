@@ -44,23 +44,29 @@ const SideMenuItems = ({
             <Button
               size="icon"
               variant="ghost"
-              // className="text-primary hover:text-foreground"
+              className="hover:text-primary"
               asChild
             >
-              <Link href={"https://github.com/bunyaminerdal"}>
+              <Link
+                href={"https://github.com/bunyaminerdal"}
+                target="_blank"
+                title="GitHub"
+              >
                 <FaGithub className="h-7 w-7" />
               </Link>
             </Button>
             <Button
               size="icon"
               variant="ghost"
-              // className="text-primary hover:text-foreground"
+              className="hover:text-primary"
               asChild
             >
               <Link
                 href={
                   "https://www.linkedin.com/in/b%C3%BCnyamin-erdal-18736345/"
                 }
+                target="_blank"
+                title="LinkedIn"
               >
                 <FaLinkedin className="h-7 w-7" />
               </Link>
@@ -68,20 +74,28 @@ const SideMenuItems = ({
             <Button
               size="icon"
               variant="ghost"
-              // className="text-primary hover:text-foreground"
+              className="hover:text-primary"
               asChild
             >
-              <Link href={"https://twitter.com/bunyaminerdal"}>
+              <Link
+                href={"https://twitter.com/bunyaminerdal"}
+                target="_blank"
+                title="Twitter"
+              >
                 <FaTwitter className="h-7 w-7" />
               </Link>
             </Button>
             <Button
               size="icon"
               variant="ghost"
-              // className="text-primary hover:text-foreground"
+              className="hover:text-primary"
               asChild
             >
-              <Link href={"https://www.instagram.com/bunyaminerdal"}>
+              <Link
+                href={"https://www.instagram.com/bunyaminerdal"}
+                target="_blank"
+                title="Instagram"
+              >
                 <FaInstagram className="h-7 w-7" />
               </Link>
             </Button>
@@ -142,6 +156,8 @@ const Sidebar = () => {
           size="icon"
           className="w-7 h-7 p-1 text-primary-foreground"
           onClick={() => setOpen(open === "open" ? "closed" : "open")}
+          name="hamburger-menu-button"
+          title="Menu"
         >
           <RxHamburgerMenu
             data-state={open}
