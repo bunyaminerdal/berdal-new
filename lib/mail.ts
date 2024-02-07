@@ -27,14 +27,14 @@ export const sendTwoFactorTokenEmail = async (
           </tr>
           <tr>
               <td style="padding: 20px; text-align: center;">
-                  <p style="color: #777;">&copy; 2023 <span style="font-size: 12px;"></span><a href="https://bunyaminerdal.com" target="_blank">Bünyamin Erdal</a></p>
+                  <p style="color: #777;">&copy; 2023 <span style="font-size: 12px;"></span><a href="https://bunyaminerdal.dev" target="_blank">Bünyamin Erdal</a></p>
               </td>
           </tr>
       </table>
   </body>  
   </html> `;
   await resend.emails.send({
-    from: "no-reply@bunyaminerdal.com",
+    from: "no-reply@bunyaminerdal.dev",
     to: email,
     subject: "2FA Code",
     html: emailHtml
@@ -65,14 +65,14 @@ export const sendPasswordResetEmail = async (
           </tr>
           <tr>
               <td style="padding: 20px; text-align: center;">
-                  <p style="color: #777;">&copy; 2023 <span style="font-size: 12px;"></span><a href="https://bunyaminerdal.com" target="_blank">Bünyamin Erdal</a></p>
+                  <p style="color: #777;">&copy; 2023 <span style="font-size: 12px;"></span><a href="https://bunyaminerdal.dev" target="_blank">Bünyamin Erdal</a></p>
               </td>
           </tr>
       </table>
   </body>  
   </html> `;
   await resend.emails.send({
-    from: "no-reply@bunyaminerdal.com",
+    from: "no-reply@bunyaminerdal.dev",
     to: email,
     subject: "Reset your password",
     html: emailHtml
@@ -103,7 +103,7 @@ export const sendVerificationEmail = async (
           </tr>
           <tr>
               <td style="padding: 20px; text-align: center;">
-                  <p style="color: #777;">&copy; 2023 <span style="font-size: 12px;"></span><a href="https://bunyaminerdal.com" target="_blank">Bünyamin Erdal</a></p>
+                  <p style="color: #777;">&copy; 2023 <span style="font-size: 12px;"></span><a href="https://bunyaminerdal.dev" target="_blank">Bünyamin Erdal</a></p>
               </td>
           </tr>
       </table>
@@ -111,7 +111,7 @@ export const sendVerificationEmail = async (
   </html> `;
 
   await resend.emails.send({
-    from: "no-reply@bunyaminerdal.com",
+    from: "no-reply@bunyaminerdal.dev",
     to: email,
     subject: "Confirm your email",
     html: emailHtml
@@ -147,7 +147,7 @@ export const sendContactMail = async (
           </tr>
           <tr>
               <td style="padding: 20px; text-align: center;">
-                  <p style="color: #777;">&copy; 2023 <span style="font-size: 12px;"></span><a href="https://bunyaminerdal.com" target="_blank">Bünyamin Erdal</a></p>
+                  <p style="color: #777;">&copy; 2023 <span style="font-size: 12px;"></span><a href="https://bunyaminerdal.dev" target="_blank">Bünyamin Erdal</a></p>
               </td>
           </tr>
       </table>
@@ -157,7 +157,7 @@ export const sendContactMail = async (
   `;
 
   await resend.emails.send({
-    from: "no-reply@bunyaminerdal.com",
+    from: "no-reply@bunyaminerdal.dev",
     to: process.env.CONTACT_EMAIL?? '',
     subject: "Contact Me",
     html: emailHtml
