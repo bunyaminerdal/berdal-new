@@ -65,7 +65,3 @@ body,
     @apply bg-background text-foreground;
   }
 }
-
-img {
-  all: inherit;
-}
