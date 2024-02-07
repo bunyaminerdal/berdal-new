@@ -7,8 +7,9 @@ import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import MainLayout from "@/components/layout/main-layout";
 
 export const metadata: Metadata = {
-  title: "Bünyamin Erdal",
-  description: "Personal website of Bünyamin Erdal.",
+  title: "Bünyamin Erdal | Portfolio | Personal Website | Contact me",
+  description:
+    "Personal website of Bünyamin Erdal. Projects, Contact me Social links. Next.js Tailwind.css Typescript Prisma react-hook-form react-icons.",
   icons: "/berdal.ico",
 };
 

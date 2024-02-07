@@ -24,9 +24,9 @@ export default function Home() {
         />
       </div>
       <div className="mt-5 p-3 border-b flex flex-col items-center">
-        <p className="text-xl md:text-3xl font-bold px-1 md:px-5">
+        <h1 className="text-xl md:text-3xl font-bold px-1 md:px-5">
           I&apos;m a Front-end Developer
-        </p>
+        </h1>
       </div>
       <div className="flex gap-2 text-primary my-5">
         <div className="w-5 h-5 md:w-14 md:h-14 flex justify-center items-center">
@@ -100,10 +100,10 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="mt-24 flex gap-1 font-light text-pretty text-xs">
+      <h2 className="mt-24 flex gap-1 font-light text-pretty text-xs">
         <span>Copyright ©</span> <Link href={"/"}>Bünyamin ERDAL</Link>
         <span>2024</span>
-      </div>
+      </h2>
     </section>
   );
 }

@@ -43,7 +43,7 @@ const ProjectPage = () => {
   return (
     <section className="flex flex-col w-full justify-center items-center gap-3">
       <div className="text-3xl font-bold  flex justify-center items-center mt-5">
-        <p>Projects</p>
+        <h1>Projects</h1>
       </div>
       <div className="border-b w-full my-2"></div>
       {projectList.map((project, index) => (

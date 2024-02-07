@@ -39,7 +39,7 @@ const SideMenuItems = ({
             className="rounded-full shadow-md my-5 shadow-primary"
             priority
           />
-          <span className="text-xl font-bold">Bünyamin Erdal</span>
+          <h1 className="text-xl font-bold">Bünyamin Erdal</h1>
           <div className="flex justify-center gap-1 m-1">
             <Button
               size="icon"
