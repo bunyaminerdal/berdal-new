@@ -34,7 +34,7 @@ export const sendTwoFactorTokenEmail = async (
   </body>  
   </html> `;
   await resend.emails.send({
-    from: "no-reply@bunyaminerdal.dev",
+    from: "Bünyamin Erdal <noreply@bunyaminerdal.dev>",
     to: email,
     subject: "2FA Code",
     html: emailHtml
@@ -72,7 +72,7 @@ export const sendPasswordResetEmail = async (
   </body>  
   </html> `;
   await resend.emails.send({
-    from: "no-reply@bunyaminerdal.dev",
+    from: "Bünyamin Erdal <noreply@bunyaminerdal.dev>",
     to: email,
     subject: "Reset your password",
     html: emailHtml
@@ -111,7 +111,7 @@ export const sendVerificationEmail = async (
   </html> `;
 
   await resend.emails.send({
-    from: "no-reply@bunyaminerdal.dev",
+    from: "Bünyamin Erdal <noreply@bunyaminerdal.dev>",
     to: email,
     subject: "Confirm your email",
     html: emailHtml
@@ -157,7 +157,7 @@ export const sendContactMail = async (
   `;
 
   await resend.emails.send({
-    from: "no-reply@bunyaminerdal.dev",
+    from: "Bünyamin Erdal <noreply@bunyaminerdal.dev>",
     to: process.env.CONTACT_EMAIL?? '',
     subject: "Contact Me",
     html: emailHtml
