@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, CardContent } from "../ui/card";
-import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import { LinkButton } from "../auth/link-button";
 
@@ -11,9 +10,9 @@ type ProjectType = {
   githubUrl: string;
   visitUrl: string;
 };
-const ProjectCard = ({ project }: { project: ProjectType }) => {
+const ProjectCard = ({ project, id }: { project: ProjectType; id: string }) => {
   return (
-    <Card className="mx-3 lg:w-[70%]">
+    <Card className="mx-3 lg:w-[70%]" id={id}>
       <CardContent className="p-0 flex">
         <div className="flex border-r items-center">
           <Image

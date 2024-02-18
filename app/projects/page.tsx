@@ -1,8 +1,12 @@
+"use client";
 import berdalImg from "../../public/images/berdal.png";
 import berdalChatImg from "../../public/images/berdal-chat.png";
 import berdalTodoImg from "../../public/images/berdal-todo.png";
 import berdalNewImg from "../../public/images/berdal-new.png";
 import ProjectCard from "@/components/project/ProjectCard";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 
 const projectList = [
   {
@@ -40,14 +44,30 @@ const projectList = [
 ];
 
 const ProjectPage = () => {
+  const container = useRef(null);
+  useGSAP(
+    () => {
+      gsap.from(["#card"], {
+        xPercent: -100,
+        opacity: 0,
+        delay: 0.2,
+        duration: 0.8,
+        stagger: 0.15,
+      });
+    },
+    { scope: container }
+  );
   return (
-    <section className="flex flex-col w-full justify-center items-center gap-3">
+    <section
+      className="flex flex-col w-full justify-center items-center gap-3"
+      ref={container}
+    >
       <div className="text-3xl font-bold  flex justify-center items-center mt-5">
         <h1>Projects</h1>
       </div>
       <div className="border-b w-full my-2"></div>
       {projectList.map((project, index) => (
-        <ProjectCard key={index} project={project} />
+        <ProjectCard id="card" key={index} project={project} />
       ))}
     </section>
   );

@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import beImg from "../public/images/be.png";
@@ -8,12 +9,50 @@ import nexticon_darkSvg from "../public/nexticon_dark.svg";
 import nexticon_lightSvg from "../public/nexticon_light.svg";
 import javascriptSvg from "../public/javascript.svg";
 import typescriptSvg from "../public/typescript.svg";
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function Home() {
+  const container = useRef(null);
+  useGSAP(
+    () => {
+      gsap.from(["#avatar"], {
+        yPercent: -100,
+        opacity: 0,
+        delay: 0.2,
+        duration: 1,
+      });
+      gsap.from(["#title"], {
+        xPercent: -200,
+        opacity: 0,
+        delay: 0.2,
+        duration: 1,
+      });
+      gsap.from(["#skills img"], {
+        yPercent: 300,
+        opacity: 0,
+        delay: 0.2,
+        duration: 0.3,
+        stagger: 0.1,
+      });
+      gsap.from(["#footer"], {
+        scale: 0.1,
+        opacity: 0,
+        delay: 0.2,
+        duration: 1,
+      });
+    },
+    { scope: container }
+  );
   return (
-    <section className="flex h-full flex-col items-center justify-center min-w-96">
+    <section
+      className="flex h-full flex-col items-center justify-center min-w-96"
+      ref={container}
+    >
       <div className="w-48  h-48 md:w-64 md:h-64 flex justify-center items-center">
         <Image
+          id="avatar"
           alt="Bunyamin Erdal"
           src={beImg}
           width={250}
@@ -24,11 +63,11 @@ export default function Home() {
         />
       </div>
       <div className="mt-5 p-3 border-b flex flex-col items-center">
-        <h1 className="text-xl md:text-3xl font-bold px-1 md:px-5">
+        <h1 id="title" className="text-xl md:text-3xl font-bold px-1 md:px-5">
           I&apos;m a Front-end Developer
         </h1>
       </div>
-      <div className="flex gap-2 text-primary my-5">
+      <div id="skills" className="flex gap-2 text-primary my-5">
         <div className="w-5 h-5 md:w-14 md:h-14 flex justify-center items-center">
           <Image
             placeholder="empty"
@@ -100,7 +139,10 @@ export default function Home() {
           />
         </div>
       </div>
-      <h2 className="mt-24 flex gap-1 font-light text-pretty text-xs">
+      <h2
+        className="mt-24 flex gap-1 font-light text-pretty text-xs"
+        id="footer"
+      >
         <span>Copyright ©</span> <Link href={"/"}>Bünyamin ERDAL</Link>
         <span>2024</span>
       </h2>
