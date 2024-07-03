@@ -1,22 +1,22 @@
 "use server";
 
-import * as z from "zod";
 import bcrypt from "bcryptjs";
+import * as z from "zod";
 
 import { update } from "@/auth";
-import { db } from "@/lib/db";
-import { SettingsSchema } from "@/schemas";
 import { getUserByEmail, getUserById } from "@/data/user";
 import { currentUser } from "@/lib/auth";
-import { generateVerificationToken } from "@/lib/tokens";
+import { db } from "@/lib/db";
 import { sendVerificationEmail } from "@/lib/mail";
+import { generateVerificationToken } from "@/lib/tokens";
+import { SettingsSchema } from "@/schemas";
 
 export const settings = async (
   values: z.infer<typeof SettingsSchema>
 ) => {
   const user = await currentUser();
 
-  if (!user) {
+  if (!user || !user?.id) {
     return { error: "Unauthorized" }
   }
 
