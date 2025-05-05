@@ -1,10 +1,9 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
-import "./globals.css";
-import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import MainLayout from "@/components/layout/main-layout";
+import type { Metadata } from "next";
+import { SessionProvider } from "next-auth/react";
+import { ThemeProvider } from "next-themes";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Bünyamin Erdal | Portfolio | Personal Website | Contact me",
@@ -21,19 +20,19 @@ export default async function RootLayout({
   const session = await auth();
 
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="antialiased">
-        <SessionProvider session={session}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <MainLayout>{children}</MainLayout>
-          </ThemeProvider>
-        </SessionProvider>
-      </body>
-    </html>
+      <html lang="en" suppressHydrationWarning>
+        <body className="antialiased">
+          <SessionProvider session={session}>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="dark"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <MainLayout>{children}</MainLayout>
+            </ThemeProvider>
+          </SessionProvider>
+        </body>
+      </html>
   );
 }
