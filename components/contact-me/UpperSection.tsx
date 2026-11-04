@@ -1,7 +1,5 @@
 "use client";
 import { useCurrentUser } from "@/hooks/useCurrentUser";
-import Link from "next/link";
-import React from "react";
 import { LinkButton } from "../auth/link-button";
 
 const UpperSection = () => {
@@ -21,7 +19,6 @@ const UpperSection = () => {
           />
         </p>
       )}
-      {!user && <p>Or you can just continue with the form below.</p>}
     </div>
   );
 };
